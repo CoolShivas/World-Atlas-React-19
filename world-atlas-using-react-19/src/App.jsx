@@ -4,25 +4,32 @@ import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import CountryPage from "./pages/CountryPage";
 import AboutPage from "./pages/AboutPage";
+import AppLayOut from "./components/Layout/AppLayOut";
 
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element:<HomePage></HomePage>,
-  },
-  {
-    path:"about",
-    element:<AboutPage></AboutPage>,
-  },
-  {
-    path:"country",
-    element:<CountryPage></CountryPage>,
-  },
-  {
-    path:"contact",
-    element:<ContactPage></ContactPage>,
-  },
+    element:<AppLayOut></AppLayOut>,
+    children:[
+      {
+        path:"/",
+        element:<HomePage></HomePage>,
+      },
+      {
+        path:"about",
+        element:<AboutPage></AboutPage>,
+      },
+      {
+        path:"country",
+        element:<CountryPage></CountryPage>,
+      },
+      {
+        path:"contact",
+        element:<ContactPage></ContactPage>,
+      },
+    ]
+  }
 ]);
 
 const App = () => {
