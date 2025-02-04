@@ -5,12 +5,14 @@ import ContactPage from "./pages/ContactPage";
 import CountryPage from "./pages/CountryPage";
 import AboutPage from "./pages/AboutPage";
 import AppLayOut from "./components/Layout/AppLayOut";
+import ErrorPage from "./pages/ErrorPage";
 
 
 const router = createBrowserRouter([
   {
     path:"/",
     element:<AppLayOut></AppLayOut>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:"/",
