@@ -1,10 +1,24 @@
-
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const HomePage = () => {
   return (
-    <div>
-        <h1>Welcome to the Home Page.</h1>
-    </div>
+    <main className="hero-section main">
+      <div className="container grid grid-two-cols">
+        {/* Starting of Hero section first grid */}
+        <div className="hero-content">
+          <h1 className="heading-xl">
+            Explore the World with us, One Country at a Time.
+          </h1>
+          <p className="paragraph">
+            Discover the history, culture, and beauty of every nation. Sort, search, and filter through countries to find the details you need.
+          </p>
+          <button className="btn btn-darken btn-inline bg-white-box">
+            Start Exploring  <FaLongArrowAltRight />
+          </button>
+        </div>
+        {/* Ending of Hero section first grid */}
+      </div>
+    </main>
   )
 }
 
