@@ -17,6 +17,11 @@ const HomePage = () => {
           </button>
         </div>
         {/* Ending of Hero section first grid */}
+        {/* Starting of Hero section second grid */}
+        <div className="hero-image">
+          <img src="../../public/images/world.png" alt="World image not found" className="banner-image"/>
+        </div>
+        {/* Ending of Hero section second grid */}
       </div>
     </main>
   )
