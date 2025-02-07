@@ -79,21 +79,22 @@ const AboutPage = () => {
       {/* Starting of Cards List Structure. */}
       <div className="gradient-cards">
         {countryFactsData.map((countryArr) => {
+          const {id, countryName, capital, population, interestingFact} = countryArr;
           return (
-            <div className="card">
+            <div className="card" key={id}>
               <div className="container-card bg-blue-box">
-                <p className="card-title">India</p>
+                <p className="card-title">{countryName}</p>
                 <p>
-                  <span className="card-description">Capital:</span>
-                  Delhi
+                  <span className="card-description">Capital : </span>
+                  {capital}
                 </p>
                 <p>
-                  <span className="card-description">Population:</span>
-                  14546465465
+                  <span className="card-description">Population : </span>
+                  {population}
                 </p>
                 <p>
-                  <span className="card-description">Interesting Facts:</span>
-                  We Love India
+                  <span className="card-description">Interesting Facts : </span>
+                  {interestingFact}
                 </p>
               </div>
             </div>
