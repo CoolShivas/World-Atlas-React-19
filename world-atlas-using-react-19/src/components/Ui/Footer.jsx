@@ -3,7 +3,7 @@
 const Footer = () => {
   return (
     <div>
-        <h1>Welcome to the Header Page.</h1>      
+        <h1>Welcome to the Footer Page.</h1>      
     </div>
   )
 }
