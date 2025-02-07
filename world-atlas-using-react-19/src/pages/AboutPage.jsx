@@ -2,9 +2,14 @@
 
 const AboutPage = () => {
   return (
-    <div>
-        <h1>Welcome to the About Page.</h1>
-    </div>
+    <section className="section-about container">
+      <h2 className="container-title">
+        Here are the Interesting Facts
+        <br />
+        we're proud of 
+      </h2>
+      
+    </section>
   )
 }
 
