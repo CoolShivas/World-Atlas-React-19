@@ -1,3 +1,4 @@
+import {NavLink} from "react-router-dom";
 import footerData from "../../api/footerData.json";
 import {MdPlace} from "react-icons/md";
 import {IoCallSharp} from "react-icons/io5";
@@ -28,6 +29,20 @@ const Footer = () => {
           );
         })}
       </div>
+      {/* Starting of Copy Right Section Area */}
+      <div className="copyright-area">
+        <div className="container">
+          <div className="grid grid-two-cols">
+            <div className="copyright-text">
+              <p>
+                Copyright & copy; 2024, All Right Reserved 
+                <NavLink to="https://www.google.com/" target="_blank">Google</NavLink>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Ending of Copy Right Section Area */}
     </footer>
   );
 };
