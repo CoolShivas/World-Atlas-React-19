@@ -33,12 +33,25 @@ const Footer = () => {
       <div className="copyright-area">
         <div className="container">
           <div className="grid grid-two-cols">
+            {/* Starting of First Grid for the Copy Right Area */}
             <div className="copyright-text">
               <p>
                 Copyright & copy; 2024, All Right Reserved 
                 <NavLink to="https://www.google.com/" target="_blank">Google</NavLink>
               </p>
             </div>
+            {/* Ending of First Grid for the Copy Right Area */}
+            {/* Starting of Second Grid for the Footer Menu */}
+            <div className="footer-menu">
+              <ul>
+                <li><NavLink to="/">Home</NavLink></li>
+                <li><NavLink to="https://www.instagram.com/" target="_blank">Instagram</NavLink></li>
+                <li><NavLink to="https://www.facebook.com/" target="_blank">Facebook</NavLink></li>
+                <li><NavLink to="https://www.whatsapp.com/" target="_blank">Whatsapp</NavLink></li>
+                <li><NavLink to="/contact">Contact</NavLink></li>
+              </ul>
+            </div>
+            {/* Ending of Second Grid for the Footer Menu */}
           </div>
         </div>
       </div>
