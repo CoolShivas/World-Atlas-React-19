@@ -598,3 +598,9 @@
     justify-content: center;
     align-items: center;
   }
+
+  .brightColor{
+    color: white;
+    font-weight: 900;
+    font-size: large;
+  }
