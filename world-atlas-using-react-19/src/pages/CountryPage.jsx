@@ -1,3 +1,4 @@
+import { Loader } from "../components/Ui/Loader";
 import { getCountriesData } from "../api/postApi";
 import { useEffect, useTransition } from "react";
 
@@ -15,7 +16,7 @@ const CountryPage = () => {
   if (isPending) {
     return (
       <center>
-        <h1> Loading... </h1>
+        <Loader></Loader>
       </center>
     );
   }
