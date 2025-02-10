@@ -1,3 +1,4 @@
+import CountryCard from "../components/Ui/CountryCard";
 import { Loader } from "../components/Ui/Loader";
 import { getCountriesData } from "../api/postApi";
 import { useEffect, useState, useTransition } from "react";
@@ -25,14 +26,22 @@ const CountryPage = () => {
   }
 
   return (
-    <div>
-      <h1>Welcome to the Country Page.</h1>
-      {countries.map((curCounty, index) => {
-        return <center>
-          <div key={index} className="brightColor">{curCounty.name.common}</div>
-        </center>;
-      })}
-    </div>
+    // <div>
+    //   <h1>Welcome to the Country Page.</h1>
+    //   {countries.map((curCounty, index) => {
+    //     return <center>
+    //       <div key={index} className="brightColor">{curCounty.name.common}</div>
+    //     </center>;
+    //   })}
+    // </div>
+    <section className="country-section">
+        <ul className="grid grid-four-cols">
+          {countries.map((curCountry, index) => {
+            return <CountryCard conTree={curCountry} key={index}>
+            </CountryCard>
+          })}
+        </ul>
+      </section>
   );
 };
 
