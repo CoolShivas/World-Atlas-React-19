@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 
 const CountryCard = ({ conTree }) => {
@@ -28,9 +29,11 @@ const CountryCard = ({ conTree }) => {
             {capital[0]}
             {/* Used the [0] for the better arrays zero index*/}
           </p>
-          <button>
-            Read More <FaArrowRight />
-          </button>
+          <NavLink to={`/country/${name.common}`}>
+            <button>
+              Read More <FaArrowRight />
+            </button>
+          </NavLink>
         </div>
       </div>
     </li>
