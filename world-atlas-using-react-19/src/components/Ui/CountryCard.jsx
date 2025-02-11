@@ -1,3 +1,5 @@
+import { FaArrowRight } from "react-icons/fa6";
+
 const CountryCard = ({ conTree }) => {
   const { flags, name, population, region, capital } = conTree;
 
@@ -7,7 +9,9 @@ const CountryCard = ({ conTree }) => {
         <img src={flags.svg} alt="flags.alt" />
         <div className="countryInfo">
           <p className="card-title">
-            {name.common.length > 10 ? name.common.slice(0, 10) + "..." : name.common}
+            {name.common.length > 10
+              ? name.common.slice(0, 10) + "..."
+              : name.common}
             {/* Use of ternary operator for the long name of a country making under the range by using slice method and concatenate  */}
           </p>
           <p>
@@ -24,6 +28,9 @@ const CountryCard = ({ conTree }) => {
             {capital[0]}
             {/* Used the [0] for the better arrays zero index*/}
           </p>
+          <button>
+            Read More <FaArrowRight />
+          </button>
         </div>
       </div>
     </li>
