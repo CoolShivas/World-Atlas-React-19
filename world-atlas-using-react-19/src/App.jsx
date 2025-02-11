@@ -6,6 +6,7 @@ import CountryPage from "./pages/CountryPage";
 import AboutPage from "./pages/AboutPage";
 import AppLayOut from "./components/Layout/AppLayOut";
 import ErrorPage from "./pages/ErrorPage";
+import CountryDetailsPage from "./pages/CountryDetailsPage";
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path:"contact",
         element:<ContactPage></ContactPage>,
+      },
+      {
+        path:"countrydetails",
+        element:<CountryDetailsPage></CountryDetailsPage>
       },
     ]
   }
