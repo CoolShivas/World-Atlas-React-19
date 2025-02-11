@@ -9,7 +9,8 @@ const CountryCard = ({ conTree }) => {
           <p className="card-title">{name.common}</p>
           <p>
             <span className="card-description">Population : </span>
-            {population}
+            {population.toLocaleString()}
+            {/* Used the toLocaleString() for the better digit number*/}
           </p>
           <p>
             <span className="card-description">Region : </span>
@@ -17,7 +18,8 @@ const CountryCard = ({ conTree }) => {
           </p>
           <p>
             <span className="card-description">Capital : </span>
-            {capital}
+            {capital[0]}
+            {/* Used the [0] for the better arrays zero index*/}
           </p>
         </div>
       </div>
