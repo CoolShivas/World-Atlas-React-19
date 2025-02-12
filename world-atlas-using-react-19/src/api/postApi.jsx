@@ -15,8 +15,9 @@ export const getCountriesData = () => {
 
 // HTTP GET METHOD FOR THE INDIVIDUAL COUNTRY NAME DATA ONLY;
 
-export const getCountriesIndividualData = () => {
+export const getCountriesIndividualData = (name) => {
+    // // Getting that params id argument here as name;
     return apies.get(
-        `/all?fullText=true&fields=name,population,region,subregion,capital,tld,currencies,languages,borders,flags`
+        `/name/${name}?fullText=true&fields=name,population,region,subregion,capital,tld,currencies,languages,borders,flags`
     );
 };

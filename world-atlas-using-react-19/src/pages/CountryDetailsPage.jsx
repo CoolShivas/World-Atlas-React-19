@@ -13,8 +13,9 @@ const CountryDetailsPage = () => {
 
   useEffect(() => {
     startTransition(async ()=>{
-      const res = await getCountriesIndividualData();
-      console.log(res);
+      const res = await getCountriesIndividualData(params.id);
+      // // Passing the argument to get that particular id data from the postApi file with the help of params;
+      console.log(res); // Here, we are getting the data from the api;
     });
   },[]);
 
