@@ -2,6 +2,7 @@ import { useEffect, useState, useTransition } from "react";
 import { useParams } from "react-router-dom";
 import { getCountriesIndividualData } from "../api/postApi";
 import { Loader } from "../components/Ui/Loader";
+import { NavLink } from "react-router-dom";
 
 const CountryDetailsPage = () => {
   const params = useParams();
@@ -101,11 +102,16 @@ const CountryDetailsPage = () => {
                     .map((curLang) => individualCountry.languages[curLang])
                     .join(", ")}
                 </p>
-                
               </div>
             </div>
           </div>
         )}
+
+        <div className="country-card-backBtn">
+          <NavLink to="/country" className="backBtn">
+            <button>Go back</button>
+          </NavLink>
+        </div>
       </div>
     </section>
   );
