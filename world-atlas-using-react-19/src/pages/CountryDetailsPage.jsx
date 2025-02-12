@@ -10,7 +10,9 @@ const CountryDetailsPage = () => {
   console.log(params);
 
   const [isPending, startTransition] = useTransition();
-  const [individualCountry, setIndividualCountry] = useState([]);
+  const [individualCountry, setIndividualCountry] = useState();
+  // // Here, in the useState([]) we have remove the array because previously we are 
+  // // getting the array of objects and now we are getting the full data as response ;
 
   useEffect(() => {
     startTransition(async ()=>{
@@ -18,7 +20,10 @@ const CountryDetailsPage = () => {
       // // Passing the argument to get that particular id data from the postApi file with the help of params;
       console.log(res); // Here, we are getting the data from the api;
       console.log(res.data[0].capital);
-      setIndividualCountry(res.data[0]);
+      if(res.status === 200)
+      {
+        setIndividualCountry(res.data[0]);
+      }
     });
   },[]);
 
@@ -33,7 +38,7 @@ const CountryDetailsPage = () => {
     <center>
         <h1>Welcom to the Country Details Page.</h1>
         <h2>How can I help you dear ?</h2>
-        <h1>{individualCountry.capital}</h1>
+        {individualCountry && (<h1>{individualCountry.name.official}</h1>)}
     </center>
   )
 }
