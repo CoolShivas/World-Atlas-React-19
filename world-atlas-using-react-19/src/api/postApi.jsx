@@ -11,3 +11,12 @@ const apies = axios.create({
 export const getCountriesData = () => {
     return apies.get("/all?fields=name,population,region,capital,flags");
 };
+
+
+// HTTP GET METHOD FOR THE INDIVIDUAL COUNTRY NAME DATA ONLY;
+
+export const getCountriesIndividualData = () => {
+    return apies.get(
+        `/all?fullText=true&fields=name,population,region,subregion,capital,tld,currencies,languages,borders,flags`
+    );
+};
