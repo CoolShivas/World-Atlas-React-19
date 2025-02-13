@@ -9,6 +9,9 @@ const CountryPage = () => {
   const [isPending, startTransition] = useTransition();
   const [countries, setCountries] = useState([]);
 
+  const [search, setSearch] = useState();
+  const [filter, setFilter] = useState('all');
+
   useEffect(() => {
     startTransition(async () => {
       const response = await getCountriesData();
@@ -26,6 +29,8 @@ const CountryPage = () => {
     );
   }
 
+  console.log(search, filter); // Getting the data here;
+
   return (
     // <div>
     //   <h1>Welcome to the Country Page.</h1>
@@ -36,7 +41,7 @@ const CountryPage = () => {
     //   })}
     // </div>
     <section className="country-section">
-      <SearchFilter></SearchFilter>
+      <SearchFilter search={search} setSearch={setSearch} filter={filter} setFilter={setFilter}></SearchFilter>
         <ul className="grid grid-four-cols">
           {countries.map((curCountry, index) => {
             return <CountryCard conTree={curCountry} key={index}>
