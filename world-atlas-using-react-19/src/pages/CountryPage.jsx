@@ -31,7 +31,10 @@ const CountryPage = () => {
 
   console.log(search, filter); // Getting the data here;
 
-  // // HERE, is the main logic for the searching countries by initials;
+  // // HERE, is the main logic for the searching and filtering countries by initials;
+  // // Therefore, FIRST MAIN LOGIC STARTS IN LINE 58, i.e, const khojFilterDesh; 
+  // // SECOND MAIN LOGIC STARTS IN LINE 41-46, i.e, const searchDeshCountry;  
+  // // THIRD MAIN LOGIC STARTS FROM LINE 49-55, i.e, const filterDeshCountryRegion; 
   // // Follows the steps by steps;
 
   // // Step Two now make a search by name and also by initials that is the letters;
@@ -42,8 +45,17 @@ const CountryPage = () => {
     return khojDesh;
   };
 
+  // // Step Three now make a filter by region;
+  const filterDeshCountryRegion = (khojDesh) => {
+    if(filter === "all")
+    {
+      return khojDesh;
+    }
+    return khojDesh.region === filter;
+  };
+
   // // Step One to filter the countries and make it another function such as (searchDeshCountry(khojDesh)) as mention above;
-  const khojFilterDesh = countries.filter((khojDesh) => searchDeshCountry(khojDesh));
+  const khojFilterDesh = countries.filter((khojDesh) => searchDeshCountry(khojDesh) && filterDeshCountryRegion(khojDesh));
 
 
   return (
