@@ -1,3 +1,4 @@
+import SearchFilter from "../components/Ui/SearchFilter";
 import CountryCard from "../components/Ui/CountryCard";
 import { Loader } from "../components/Ui/Loader";
 import { getCountriesData } from "../api/postApi";
@@ -35,6 +36,7 @@ const CountryPage = () => {
     //   })}
     // </div>
     <section className="country-section">
+      <SearchFilter></SearchFilter>
         <ul className="grid grid-four-cols">
           {countries.map((curCountry, index) => {
             return <CountryCard conTree={curCountry} key={index}>
