@@ -10,7 +10,7 @@ const CountryPage = () => {
   const [countries, setCountries] = useState([]);
 
   const [search, setSearch] = useState();
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     startTransition(async () => {
@@ -31,6 +31,21 @@ const CountryPage = () => {
 
   console.log(search, filter); // Getting the data here;
 
+  // // HERE, is the main logic for the searching countries by initials;
+  // // Follows the steps by steps;
+
+  // // Step Two now make a search by name and also by initials that is the letters;
+  const searchDeshCountry = (khojDesh) => {
+    if (search) {
+      return khojDesh.name.common.toLowerCase().includes(search.toLowerCase());
+    }
+    return khojDesh;
+  };
+
+  // // Step One to filter the countries and make it another function such as (searchDeshCountry(khojDesh)) as mention above;
+  const khojFilterDesh = countries.filter((khojDesh) => searchDeshCountry(khojDesh));
+
+
   return (
     // <div>
     //   <h1>Welcome to the Country Page.</h1>
@@ -41,14 +56,18 @@ const CountryPage = () => {
     //   })}
     // </div>
     <section className="country-section">
-      <SearchFilter search={search} setSearch={setSearch} filter={filter} setFilter={setFilter}></SearchFilter>
-        <ul className="grid grid-four-cols">
-          {countries.map((curCountry, index) => {
-            return <CountryCard conTree={curCountry} key={index}>
-            </CountryCard>
-          })}
-        </ul>
-      </section>
+      <SearchFilter
+        search={search}
+        setSearch={setSearch}
+        filter={filter}
+        setFilter={setFilter}
+      ></SearchFilter>
+      <ul className="grid grid-four-cols">
+        {khojFilterDesh.map((curCountry, index) => {
+          return <CountryCard conTree={curCountry} key={index}></CountryCard>;
+        })}
+      </ul>
+    </section>
   );
 };
 
