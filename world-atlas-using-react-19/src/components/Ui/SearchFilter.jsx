@@ -1,6 +1,6 @@
 
 
-const SearchFilter = ({search, setSearch, filter, setFilter}) => {
+const SearchFilter = ({search, setSearch, filter, setFilter, countries, setCountries}) => {
 
   const handlerOnSearchChange = (event) => {
     console.log(event.target.value); // Getting the data here;
@@ -12,8 +12,12 @@ const SearchFilter = ({search, setSearch, filter, setFilter}) => {
     setFilter(event.target.value);
   };
 
-  const sortAscDscDesh = () => {
+  const sortAscDscDesh = (e) => {
     console.log("Ascending/Descending");
+    const arrangeDeshOrder = [...countries].sort((a, b) => {
+      return e === "asc" ? a.name.common.localeCompare(b.name.common) : b.name.common.localeCompare(a.name.common);
+    });
+    setCountries(arrangeDeshOrder);
   };
 
   return (
@@ -21,11 +25,11 @@ const SearchFilter = ({search, setSearch, filter, setFilter}) => {
         <input type="text" placeholder="search" value={search} onChange={handlerOnSearchChange}/>
 
         <div>
-          <button onClick={sortAscDscDesh}>Ascen</button>
+          <button onClick={() => sortAscDscDesh("asc")}>Ascen</button>
         </div>
 
         <div>
-          <button onClick={sortAscDscDesh}>Descen</button>
+          <button onClick={() => sortAscDscDesh("desc")}>Descen</button>
         </div>
 
         <div>

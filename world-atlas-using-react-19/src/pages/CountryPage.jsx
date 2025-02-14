@@ -73,6 +73,8 @@ const CountryPage = () => {
         setSearch={setSearch}
         filter={filter}
         setFilter={setFilter}
+        countries={countries}
+        setCountries={setCountries}
       ></SearchFilter>
       <ul className="grid grid-four-cols">
         {khojFilterDesh.map((curCountry, index) => {
