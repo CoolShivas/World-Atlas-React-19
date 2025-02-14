@@ -1,6 +1,12 @@
+import {GiHamburgerMenu} from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+
+  const handlerOnHamburgerMenu = () => {
+    console.log("HumburgerMenu");
+  };
+
   return (
     <header>
       <div className="container">
@@ -20,6 +26,11 @@ const Header = () => {
             </ul>
           </nav>
           {/* Ending of Navbar */}
+          <div className="ham-menu">
+            <button onClick={handlerOnHamburgerMenu}>
+              <GiHamburgerMenu />
+            </button>
+          </div>
         </div>
       </div>
     </header>
