@@ -1,12 +1,15 @@
+import { useState } from "react";
 import {GiHamburgerMenu} from "react-icons/gi";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
 
+  const [showHumburMenu, setShowHumburMenu] = useState(false);
+
   const handlerOnHamburgerMenu = () => {
     console.log("HumburgerMenu");
+    setShowHumburMenu(!showHumburMenu);
   };
-
   return (
     <header>
       <div className="container">
@@ -17,7 +20,7 @@ const Header = () => {
           </div>
           {/* Ending of Logo Heading */}
           {/* Starting of Navbar */}
-          <nav>
+          <nav className={showHumburMenu ? "menu-mobile" : "menu-web"}>
             <ul>
               <li><NavLink to="/">Home</NavLink></li>
               <li><NavLink to="/about">About</NavLink></li>
