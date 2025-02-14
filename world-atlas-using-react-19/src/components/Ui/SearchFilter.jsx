@@ -12,9 +12,22 @@ const SearchFilter = ({search, setSearch, filter, setFilter}) => {
     setFilter(event.target.value);
   };
 
+  const sortAscDscDesh = () => {
+    console.log("Ascending/Descending");
+  };
+
   return (
     <section className="section-searchFilter container">
         <input type="text" placeholder="search" value={search} onChange={handlerOnSearchChange}/>
+
+        <div>
+          <button onClick={sortAscDscDesh}>Ascen</button>
+        </div>
+
+        <div>
+          <button onClick={sortAscDscDesh}>Descen</button>
+        </div>
+
         <div>
             <select className="select-section" value={filter} onChange={handlerOnFilterChange}>
                 <option value="all">All</option>
